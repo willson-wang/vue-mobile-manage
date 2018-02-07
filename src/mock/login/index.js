@@ -7,12 +7,12 @@ export default {
     loginIn: (config) => {
         const param = paramBody(config.body);
         console.log(param);
-        if (param.username !== 'wks') {
+        if (param.username !== 'admin') {
             return {};
         }
         let result = {
-            username: 'wks',
-            login_name: '王康森'
+            username: 'admin',
+            login_name: '123456'
         };
         return result;
     }

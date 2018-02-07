@@ -6,7 +6,7 @@
           </div>
           <ul class="ui-home__menu">
               <li v-for="(item, index) in oprationList" :key="index" @click="linkTo(item.name)">
-                  <div>111</div>
+                  <div :style="{color: iconList[index]['color']}"><i :class="'icon-' + iconList[index]['name']"></i></div>
                   <p>{{item.title}}</p>
               </li>
           </ul>
@@ -17,7 +17,7 @@
           </div>
           <ul class="ui-home__list">
               <li v-for="(item, index) in otherList" :key="index">
-                  <div>111</div>
+                  <div :style="{color: iconList[index]['color']}"><i :class="'icon-' + iconList[index]['name']"></i></div>
                   <p>{{item.title}}</p>
               </li>
           </ul>
@@ -38,6 +38,36 @@
                     b: 20,
                     c: 30
                 },
+                iconList: [
+                    {
+                        name: 's-location',
+                        color: '#5bd6a8'
+                    },
+                    {
+                        name: 'wait-order',
+                        color: '#fcb83b'
+                    },
+                    {
+                        name: 'manage',
+                        color: '#a185d9'
+                    },
+                    {
+                        name: 'diff-order',
+                        color: '#7c90ef'
+                    },
+                    {
+                        name: 'loss-order',
+                        color: '#ff6e80'
+                    },
+                    {
+                        name: 'home',
+                        color: '#7692f5'
+                    },
+                    {
+                        name: 'customer-service',
+                        color: '#b4d745'
+                    }
+                ],
                 oprationList: [
                     {
                         title: 'SKU库存管理',
@@ -82,17 +112,7 @@
                         name: ''
                     },
                     {
-                        title: '亏损订单',
-                        icon: 'a',
-                        name: ''
-                    },
-                    {
                         title: '待处理订单',
-                        icon: 'a',
-                        name: ''
-                    },
-                    {
-                        title: '客服异常订单',
                         icon: 'a',
                         name: ''
                     },
@@ -102,12 +122,22 @@
                         name: ''
                     },
                     {
+                        title: '订单异常',
+                        icon: 'a',
+                        name: ''
+                    },
+                    {
+                        title: '亏损订单',
+                        icon: 'a',
+                        name: ''
+                    },
+                    {
                         title: '邮件',
                         icon: 'a',
                         name: ''
                     },
                     {
-                        title: '订单异常',
+                        title: '客服异常订单',
                         icon: 'a',
                         name: ''
                     }
@@ -170,9 +200,14 @@
                 flex-direction: column;
                 justify-content: center;
 
+                i {
+                    font-size: 50px; /*px*/
+                }
+
                 >p {
                     font-size: 22px; /*px*/
                     color: @color-info1;
+                    margin-top: 10px;
                 }
             }
         }
@@ -184,6 +219,11 @@
                 flex: 0 0 50%;
                 display: flex;
                 align-items: center;
+
+                i {
+                    font-size: 36px; /*px*/
+                }
+
                 >p {
                     font-size: 24px; /*px*/
                     color: @color-info1;
