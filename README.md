@@ -41,5 +41,5 @@
 ## 移动端扫描下方二维码
 
 <a href="https://github.com/willson-wang/vue-mobile-manage/blob/master/static/img/vmm.png" target="_blank">
-    <img src="https://github.com/willson-wang/vue-mobile-manage/blob/master/static/img/vmm.png" width="300" height="300" style="max-width:100%;">
+    <img src="https://github.com/willson-wang/vue-mobile-manage/blob/master/static/img/vmm.png" width="220" height="220" style="max-width:100%;">
 </a>
