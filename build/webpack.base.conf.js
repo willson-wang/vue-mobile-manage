@@ -1,13 +1,13 @@
-'use strict'
-const path = require('path')
-const utils = require('./utils')
-const config = require('../config')
-const vueLoaderConfig = require('./vue-loader.conf')
-const px2rem = require('postcss-px2rem-exclude');
-const webpack = require('webpack')
+'use strict';
+const path = require('path');
+const utils = require('./utils');
+const config = require('../config');
+const vueLoaderConfig = require('./vue-loader.conf');
+// const px2rem = require('postcss-px2rem-exclude');
+// const webpack = require('webpack');
 
-function resolve(dir) {
-    return path.join(__dirname, '..', dir)
+function resolve (dir) {
+    return path.join(__dirname, '..', dir);
 }
 
 const createLintingRule = () => ({
@@ -19,18 +19,18 @@ const createLintingRule = () => ({
         formatter: require('eslint-friendly-formatter'),
         emitWarning: !config.dev.showEslintErrorsInOverlay
     }
-})
+});
 
 module.exports = {
     context: path.resolve(__dirname, '../'),
     entry: {
-        app: './src/main.js'
+        app: ['babel-polyfill', './src/main.js']
     },
     output: {
         path: config.build.assetsRoot,
         filename: '[name].js',
-        publicPath: process.env.NODE_ENV === 'production' ?
-            config.build.assetsPublicPath : config.dev.assetsPublicPath
+        publicPath: process.env.NODE_ENV === 'production'
+            ? config.build.assetsPublicPath : config.dev.assetsPublicPath
     },
     resolve: {
         extensions: ['.js', '.vue', '.json'],
@@ -43,7 +43,7 @@ module.exports = {
             'assets': resolve('src/assets'),
             'store': resolve('src/store'),
             'utils': resolve('src/utils'),
-            'views': resolve('src/views'),
+            'views': resolve('src/views')
         }
     },
     module: {
@@ -57,7 +57,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+                include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client'), resolve('node_modules/pinyin')]
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -107,4 +107,4 @@ module.exports = {
         tls: 'empty',
         child_process: 'empty'
     }
-}
+};

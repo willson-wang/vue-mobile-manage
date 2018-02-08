@@ -18,6 +18,7 @@
 
 <script>
     import pingYin from 'pinyin';
+    // const pingYin = require('pinyin');
     // const NAMES = ['Aaron', 'Alden', 'Austin', 'Baldwin', 'Braden', 'Carl', 'Chandler', 'Clyde', 'David', 'Edgar', 'Elton', 'Floyd', 'Freeman', 'Gavin', 'Hector', 'Henry', 'Ian', 'Jason', 'Joshua', 'Kane', 'Lambert', 'Matthew', 'Morgan', 'Neville', 'Oliver', 'Oscar', 'Perry', 'Quinn', 'Ramsey', 'Scott', 'Seth', 'Spencer', 'Timothy', 'Todd', 'Trevor', 'Udolf', 'Victor', 'Vincent', 'Walton', 'Willis', 'Xavier', 'Yvonne', 'Zack', 'Zane'];
     const NAMES = ['阿克江', '布吉岛', '长安街', '地球', '二次花费', '飞蛾', '孤岛惊魂', '湖南', '佳佳', '刊登', '乐聚', '马克德大', '虐暴', '欧派大额', '碰倒', '去大红', '让回复啊', '速度与激情', '停顿', '挖方打单', '下不放过', '以上几十', '炸弹'];
     

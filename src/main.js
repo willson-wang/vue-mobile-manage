@@ -24,6 +24,8 @@ import qcIndexSection from 'components/index-section';
 import qcIndexCell from 'components/index-cell';
 import Scroll from 'components/scroll';
 
+import 'babel-polyfill';
+
 Vue.config.productionTip = false;
 FastClick.attach(document.body);
 
